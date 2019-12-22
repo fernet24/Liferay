@@ -11,5 +11,9 @@ The LiferayChallenge program reads an input text file which calculates the total
 * File->Import->Git Clone URI->URI
 * Right Click Project->Run as->Java application
 
+## Contact
+
+Contact me for any feedback: eram9009@gmail.com
+
 ## Authors
 * Eric Ramirez
