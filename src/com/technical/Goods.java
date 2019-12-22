@@ -58,16 +58,21 @@ public class Goods
 	            {
 	            	if(token.nval != 1.0)
 	            	{
+	            		//stores default values
 	            		beforeTax.add(String.valueOf(token.nval)); 
 	            		
 		            	if(taxObject.isImportFlag() == true && taxObject.isExemptFlag() == true)
 		            	{
+		            		//stores sales tax
 		            		taxObject.setSalesTax(taxObject.getSalesTax() + Round.nearestFifth(token.nval * Tax.importedTax));
 		            		
+		            		//tracks total amount
 		            		update.setCurrentTotal(token.nval + Round.nearestFifth(token.nval * Tax.importedTax));
 		            		
+		            		//stores total amount
 		            		taxObject.setTotal(taxObject.getTotal() + update.getCurrentTotal());
 		            		
+		            		//stores values after calculated
 		            		afterTax.add(Round.nearestOnes(update.getCurrentTotal()));
 		            		
 		            		taxObject.setImportFlag(false);
@@ -75,34 +80,45 @@ public class Goods
 		            	}
 		            	else if(taxObject.isImportFlag() == true && taxObject.isExemptFlag() == false)
 		            	{
+		            		//tracks current sales tax
 		            		update.setCurrentSalesTax(Round.nearestFifth(token.nval * Tax.importedTax) + Round.nearestFifth(token.nval * Tax.basicTax));
 		            		
+		            		//stores sales tax
 		            		taxObject.setSalesTax(taxObject.getSalesTax() + update.getCurrentSalesTax());
 		            		
+		            		//tracks total amount
 		            		update.setCurrentTotal(token.nval + update.getCurrentSalesTax());
 		            		
+		            		//stores total amount
 		            		taxObject.setTotal(taxObject.getTotal() + update.getCurrentTotal());
 		            		
+		            		//stores value after calculated
 		            		afterTax.add(Round.nearestOnes(update.getCurrentTotal())); 
 		            		
 		            		taxObject.setImportFlag(false);
 		            	}
 		            	else if(taxObject.isImportFlag() == false && taxObject.isExemptFlag() == true)
 		            	{
+		            		//stores total amount
 		            		taxObject.setTotal(taxObject.getTotal() + token.nval);
 		            		
+		            		//stores value after calculated
 		            		afterTax.add(Round.nearestOnes(token.nval));
 		            		
 		            		taxObject.setExemptFlag(false);
 		            	}
 		            	else  
 		            	{
+		            		//tracks sales tax
 		            		update.setCurrentSalesTax(Round.nearestFifth(token.nval * Tax.basicTax));
 		            		
+		            		//stores sales tax amount
 		            		taxObject.setSalesTax(taxObject.getSalesTax() + token.nval * Tax.basicTax);
 		            		
+		            		//tracks total amount
 		            		update.setCurrentTotal(token.nval + update.getCurrentSalesTax());
 		            		
+		            		//stores total amount
 		            		taxObject.setTotal(taxObject.getTotal() + update.getCurrentTotal());
 		            		
 		            		afterTax.add(Round.nearestOnes(update.getCurrentTotal()));
@@ -111,7 +127,7 @@ public class Goods
 	            }
 	          
 	        } 
-	        
+	        //prints information to console
 	        CurrentPrice.print(beforeTax, afterTax, taxObject);
 	        
 	        //copies content of input file     
