@@ -13,7 +13,7 @@ The LiferayChallenge program reads an input text file which calculates the total
 
 ## Contact
 
-Contact me for any feedback: eram9009@gmail.com
+Contact me for any feedback or questions: eram9009@gmail.com
 
 ## Authors
 * Eric Ramirez
