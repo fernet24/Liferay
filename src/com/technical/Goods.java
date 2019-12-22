@@ -32,7 +32,7 @@ public class Goods
 			ArrayList<String> beforeTax = new ArrayList<String>();
 	        ArrayList<Double> afterTax = new ArrayList<Double>();
 			
-			File input1 = new File("C:\\Users\\theMachine\\Documents\\TechnicalChallenge\\input2.txt");
+			File input1 = new File("input2.txt");
 			//File input2 = new File("C:\\Users\\theMachine\\Documents\\TechnicalChallenge\\input2.txt");
 			//File input3 = new File("C:\\Users\\theMachine\\Documents\\TechnicalChallenge\\input3.txt");
 	        
