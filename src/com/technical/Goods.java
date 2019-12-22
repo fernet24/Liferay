@@ -137,7 +137,7 @@ public class Goods
 	        FileInputStream ins = null;
 		    FileOutputStream outs = null;
 		      
-		    File outFile = new File("C:\\Users\\theMachine\\Documents\\TechnicalChallenge\\output.txt");
+		    File outFile = new File("output.txt");
 		    ins = new FileInputStream(input1);
 		         
 		    outs = new FileOutputStream(outFile);
@@ -145,14 +145,14 @@ public class Goods
 		    Files.fileCopy(ins, outs);
 		         
 		    //replaces a word within the text file     
-		    Files.updateFile("C:\\Users\\theMachine\\Documents\\TechnicalChallenge\\output.txt", " at ", ": ");
+		    Files.updateFile("output.txt", " at ", ": ");
 		         
 		    //replaces a number within the text file
 		    for(int i = 0; i <= beforeTax.size() - 1; i++)
-		        Files.updateFile("C:\\Users\\theMachine\\Documents\\TechnicalChallenge\\output.txt", beforeTax.get(i), String.valueOf(afterTax.get(i)));
+		        Files.updateFile("output.txt", beforeTax.get(i), String.valueOf(afterTax.get(i)));
 		         
 		    //Writes to the output file
-		    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\theMachine\\Documents\\TechnicalChallenge\\output.txt", true)));
+		    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("output.txt", true)));
 		    out.println("Sales Tax: " + Round.nearestOnes(taxObject.getSalesTax()));
 		    out.println("Total: " + Round.nearestOnes(taxObject.getTotal()));
 		         
