@@ -6,5 +6,10 @@ The LiferayChallenge program reads an input text file which calculates the total
 * Eclipse IDE
 * Junit
 
+## How To Run Program
+* Download Eclipse IDE
+* File->Import->Git Clone URI->URI
+* Right Click Project->Run as->Java application
+
 ## Authors
 * Eric Ramirez
