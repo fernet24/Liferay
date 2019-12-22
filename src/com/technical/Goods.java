@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StreamTokenizer;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Goods 
 {
@@ -31,11 +32,13 @@ public class Goods
 			CurrentPrice update = new CurrentPrice();
 			ArrayList<String> beforeTax = new ArrayList<String>();
 	        ArrayList<Double> afterTax = new ArrayList<Double>();
-			
-			File input1 = new File("input2.txt");
-			//File input2 = new File("C:\\Users\\theMachine\\Documents\\TechnicalChallenge\\input2.txt");
-			//File input3 = new File("C:\\Users\\theMachine\\Documents\\TechnicalChallenge\\input3.txt");
 	        
+	        System.out.println("Please insert text file: ");
+	        
+	        Scanner in = new Scanner(System.in);
+	        String file = in.nextLine();
+			
+			File input1 = new File(file);
 			
 			FileReader reader = new FileReader(input1); 
 	        BufferedReader bufferRead = new BufferedReader(reader); 
