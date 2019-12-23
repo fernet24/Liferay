@@ -133,11 +133,16 @@ public class Goods
 	        //prints information to console
 	        CurrentPrice.print(beforeTax, afterTax, taxObject);
 	        
+	        System.out.println("");
+	        System.out.println("Please enter output text file: ");
+	        
+	        String output = in.nextLine();
+	        
 	        //copies content of input file     
 	        FileInputStream ins = null;
 		    FileOutputStream outs = null;
 		      
-		    File outFile = new File("output.txt");
+		    File outFile = new File(output);
 		    ins = new FileInputStream(input1);
 		         
 		    outs = new FileOutputStream(outFile);
@@ -145,14 +150,14 @@ public class Goods
 		    Files.fileCopy(ins, outs);
 		         
 		    //replaces a word within the text file     
-		    Files.updateFile("output.txt", " at ", ": ");
+		    Files.updateFile(output, " at ", ": ");
 		         
 		    //replaces a number within the text file
 		    for(int i = 0; i <= beforeTax.size() - 1; i++)
-		        Files.updateFile("output.txt", beforeTax.get(i), String.valueOf(afterTax.get(i)));
+		        Files.updateFile(output, beforeTax.get(i), String.valueOf(afterTax.get(i)));
 		         
 		    //Writes to the output file
-		    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("output.txt", true)));
+		    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(output, true)));
 		    out.println("Sales Tax: " + Round.nearestOnes(taxObject.getSalesTax()));
 		    out.println("Total: " + Round.nearestOnes(taxObject.getTotal()));
 		         
